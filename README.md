@@ -1,3 +1,3 @@
-# gc-bootstrap-template
+# Calculator
 
-Contains a simple bootstrap setup
+https://allison-7.github.io/calculator/
