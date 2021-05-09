@@ -1,10 +1,21 @@
 //https://www.w3schools.com/js/js_math.asp
 
-/* function getValues(){
-    let currentValue = document.getElementById("a").innerHTML
-}
- */
 
+const buttons = document.getElementById("keyboard");
+//console.log(buttons);
+buttons.addEventListener('click', (event) => {
+    const {target} = event;
+    console.log(target.value);
+});
+
+/*for (let i = 0; i < buttons; i++){
+    document.querySelectorAll(".btn")[i].addEventListener("click", function() {
+        console.log(document.getElementById());
+        
+    });
+}*/
+
+//main math function
 function result(){
     let a = parseFloat(document.getElementById("a").value);
     let b = parseFloat(document.getElementById("b").value);
@@ -139,4 +150,5 @@ function result(){
     }
     console.log(answer);
 }
-document.getElementById("submit").addEventListener("click",result);
+
+//document.getElementById("submit").addEventListener("click",result);
