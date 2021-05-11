@@ -2,10 +2,56 @@
 
 
 const buttons = document.getElementById("keyboard");
-//console.log(buttons);
+let resultNum = document.getElementById("result");
+let a = "0";
+let b = "0";
+let op = "";
+//result is top
+//previous is bottom with operators
 buttons.addEventListener('click', (event) => {
     const {target} = event;
-    console.log(target.value);
+    if(target.value == "clear"){
+        document.getElementById("result").textContent = "0";
+        document.getElementById("previous").textContent = "0";
+        return;
+    }
+    if((document.getElementById("result").textContent == "0") && (document.getElementById("previous").textContent == "0")){
+        document.getElementById("result").textContent = target.value;
+        document.getElementById("previous").textContent = target.value;
+        if((op == "")){
+            a = target.value;
+        }
+    }
+    else{
+        if(!(isNaN(target.value)) || (target.value == ".")){ //if a number
+            document.getElementById("result").textContent += target.value;
+            document.getElementById("previous").textContent += target.value;
+            if((op == "")){
+                a += target.value;
+            } else {
+                if (b == "0"){
+                    b = target.value;
+                    document.getElementById("result").textContent = target.value;
+                }
+                else {
+                    b += target.value;
+                    
+                }
+            }
+        }
+        else{
+            document.getElementById("previous").textContent += target.value;
+            if(target.value != "="){
+                op = target.value;
+            }
+        }
+    }
+    console.log(a);
+    console.log(op);
+    console.log(b);
+    if(target.value == "="){
+        result(a,b,op);
+    }
 });
 
 /*for (let i = 0; i < buttons; i++){
@@ -16,10 +62,9 @@ buttons.addEventListener('click', (event) => {
 }*/
 
 //main math function
-function result(){
-    let a = parseFloat(document.getElementById("a").value);
-    let b = parseFloat(document.getElementById("b").value);
-    let operator = document.getElementById("operator").value;
+function result(a,b,operator){
+    a = parseFloat(a);
+    b = parseFloat(b);
     let degrees = true;
     let arc = false;
     let hyp = false;
@@ -136,18 +181,21 @@ function result(){
         }
     };
     let answer = 0;
-    if(operator == '+'){
-        answer = parseFloat(mathfunctions.add());
+    switch(operator){
+        case "+" : 
+            answer = mathfunctions.add();
+            break; 
+        case "-" :
+            answer = mathfunctions.subtract();
+            break;
+        case "*" :
+            answer = mathfunctions.multiply();
+            break;
+        case "/" :
+            answer = mathfunctions.divide();
     }
-    if(operator == '-'){
-        answer = parseFloat(mathfunctions.subtract());
-    }
-    if(operator == '*'){
-        answer = parseFloat(mathfunctions.multiply());
-    }
-    if(operator == '/'){
-        answer = parseFloat(mathfunctions.divide());
-    }
+    document.getElementById("previous").textContent += answer;
+    document.getElementById("result").textContent = answer;
     console.log(answer);
 }
 
