@@ -28,67 +28,68 @@
         </div>
           <div id="keyboard">
           <div>
-            <label class ="checkbox-inline"><input type = "checkbox" value = "">arc</label>
-            <label class ="checkbox-inline"><input type = "checkbox" value = "">hyp</label>
+            <label class ="checkbox-inline"><input type = "checkbox" value = "" id ="arc">arc</label>
+            <label class ="checkbox-inline"><input type = "checkbox" value = "" id = "hyp">hyp</label>
           </div>
           <div>
-            <label class="radio-inline"><input type="radio" name="Degrees" checked>Degrees</label>
-            <label class="radio-inline"><input type="radio" name="Radians">Radians</label>
+            <label class="radio-inline"><input type="radio" name="TrigType" checked id = "deg">Degrees</label>
+            <label class="radio-inline"><input type="radio" name="TrigType" id = "rad">Radians</label>
           </div>
           <div class ="btn-group d-flex">
-            <button class="btn btn-secondary operator" value ="sin">sin</button>
-            <button class="btn btn-secondary operator" value ="cos">cos</button>
-            <button class="btn btn-secondary operator" value ="tan">cos</button>
+            <button class="btn btn-secondary operator" value ="sin(">sin</button>
+            <button class="btn btn-secondary operator" value ="cos(">cos</button>
+            <button class="btn btn-secondary operator" value ="tan(">tan</button>
           </div>
           <div class="btn-group d-flex">
-            <button class="btn btn-info" value="Pi">&#120587;</button>
-            <button class="btn btn-info" value="e"><i>e</i></button>
+            <button class="btn btn-info" value="Math.PI">&#120587;</button>
+            <button class="btn btn-info" value="Math.E"><i>e</i></button>
             <button class="btn btn-danger clear" value="clear">C</button>
           </div>
           <div class="btn-group d-flex">
-            <button class="btn btn-secondary operator" value="sqaure">x<sup>2</sup></button>
-            <button class="btn btn-secondary operator" value="cube">x<sup>3</sup></button>
-            <button class="btn btn-secondary operator" value="inverse"><sup>1</sup>/<sub>x</sub></button>
-            <button class="btn btn-secondary" value="abs">|x|</button>
+            <button class="btn btn-secondary operator" value="**2">x<sup>2</sup></button>
+            <button class="btn btn-secondary operator" value="**3">x<sup>3</sup></button>
+            <button class="btn btn-secondary operator" value="**(-1)"><sup>1</sup>/<sub>x</sub></button>
+            <button class="btn btn-secondary" value="Math.abs(">|x|</button>
+            <button class="btn btn-secondary operator" value=",">,</button>
           </div>
           <div class="btn-group d-flex">
-            <button class="btn btn-secondary operator" value="sqrt"><sup>2</sup>&Sqrt; x</button>
-            <button class="btn btn-secondary operator" value="third"><sup>3</sup>&Sqrt; x</button>
-            <button class="btn btn-secondary operator" value="leftbracket">(</button>
-            <button class="btn btn-secondary operator" value="rightbracket">)</button>
-            <button class="btn btn-secondary operator" value="factorial">n!</button>
+            <button class="btn btn-secondary operator" value="Math.sqrt("><sup>2</sup>&Sqrt; x</button>
+            <button class="btn btn-secondary operator" value="Math.cbrt("><sup>3</sup>&Sqrt; x</button>
+            <button class="btn btn-secondary operator" value="(">(</button>
+            <button class="btn btn-secondary operator" value=")">)</button>
+            <button class="btn btn-secondary operator" value="factorial(">n!</button>
           </div>
           <div class="btn-group d-flex">
-            <button class="btn btn-secondary operator" value="power">x<sup>y</sup></button>
-            <button class="btn btn-secondary operator" value="xRoot"><sup>y</sup>&Sqrt; x</button>
+            <button class="btn btn-secondary operator" value="**">x<sup>y</sup></button>
+            <button class="btn btn-secondary operator" value="nthRoot("><sup>y</sup>&Sqrt; x</button>
             <button class="btn btn-info" value="7">7</button>
             <button class="btn btn-info" value="8">8</button>
             <button class="btn btn-info" value="9">9</button>
           </div>
           <div class="btn-group d-flex">
-            <button class="btn btn-secondary operator" value="power10">10<sup>x</sup></button>
-            <button class="btn btn-secondary operator" value="power2">2<sup>x</sup></button>
+            <button class="btn btn-secondary operator" value="10**">10<sup>x</sup></button>
+            <button class="btn btn-secondary operator" value="2**">2<sup>x</sup></button>
             <button class="btn btn-info" value="4">4</button>
             <button class="btn btn-info" value="5">5</button>
             <button class="btn btn-info" value="6">6</button>
           </div>
           <div class="btn-group d-flex">
-            <button class="btn btn-secondary operator" value="log">log</button>
-            <button class="btn btn-secondary operator" value="logY">log<sub>y<sup>x</sup></button>
+            <button class="btn btn-secondary operator" value="Math.log10(">log</button>
+            <button class="btn btn-secondary operator" value="log(">log<sub>y<sup>x</sup></button>
             <button class="btn btn-info" value="1">1</button>
             <button class="btn btn-info" value="2">2</button>
             <button class="btn btn-info" value="3">3</button>
           </div>
           <div class="btn-group d-flex">
-            <button class="btn btn-secondary operator" value="ln">ln</button>
-            <button class="btn btn-secondary operator" value="ePower">e<sup>x</sup></button>
-            <button class="btn btn-info operator" value="+/-">+/-</button>
+            <button class="btn btn-secondary operator" value="ln(">ln</button>
+            <button class="btn btn-secondary operator" value="ePow(" >e<sup>x</sup></button>
+            <button class="btn btn-info operator" value="(-">+/-</button>
             <button class="btn btn-info" value="0">0</button>
             <button class="btn btn-info decimal" value=".">.</button>
           </div>
           <div class="btn-group d-flex">
             <button class="btn btn-secondary operator" value="/">&divide</button>
-             <button class="btn btn-secondary operator" value="x">X</button>
+             <button class="btn btn-secondary operator" value="*">*</button>
              <button class="btn btn-secondary operator" value="-">-</button>
              <button class="btn btn-secondary operator" value="+">+</button>
              <button class="btn btn-success operator equals" value="=">=</button>
