@@ -3,13 +3,15 @@
 const buttons = document.getElementById("keyboard");
 let resultNum = document.getElementById("result");
 
+//previous is bottom
+//top is result
 buttons.addEventListener('click', (event) => {
     const {target} = event;
     console.log(target.value);
     let arc = document.getElementById("arc").checked;
     let hyp = document.getElementById("hyp").checked;
     let deg = document.getElementById("deg").checked;
-    if((target.value == "clear") || (target.value == "on")){
+    if((target.value == "clear") || (target.value == "on") || (target.value == "")){
         document.getElementById("result").textContent = "0";
         document.getElementById("previous").textContent = "0";
         return;
@@ -17,8 +19,8 @@ buttons.addEventListener('click', (event) => {
     if((document.getElementById("result").textContent == "0") && (document.getElementById("previous").textContent == "0")){
         document.getElementById("result").textContent = target.value;
         document.getElementById("previous").textContent = target.value;
-        expression = document.getElementById("previous").textContent;
-        if((target.value == "sin(")){
+        //expression = document.getElementById("previous").textContent;
+        if((target.value == "sin(") || (target.value == "cos(") || (target.value == "tan(")){
             let first = deg + "," + arc + "," + hyp + ",";
             document.getElementById("previous").textContent += first;
         }
@@ -34,11 +36,13 @@ buttons.addEventListener('click', (event) => {
                 console.log(first);
                 first += target.value + deg + "," + arc + "," + hyp + ",";
                 document.getElementById("previous").textContent += first;
+                document.getElementById("result").textContent = target.value;
             }
             else {
                 document.getElementById("previous").textContent += target.value;
+                document.getElementById("result").textContent = target.value;
             }
-            document.getElementById("result").textContent = "";
+            //document.getElementById("result").textContent = "";
         }
     }
     if(target.value == "="){
@@ -52,6 +56,14 @@ buttons.addEventListener('click', (event) => {
     }
 });
 
+/*function displayValue(v, expression){
+    if(!(isNaN(v)) || (v == ".") || (v == "+") || (v == "-") || (v == "/") || (v == "*")) { //if a number or a regular operator
+        return v;
+    }
+    else{
+        if (v == "**")
+    }
+}*/
 //helper functions
 function nthRoot(x, n){
     ng = n % 2;
